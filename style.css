@@ -13,8 +13,8 @@ body {
 }
 
 .tarjeta {
-    width: 350px;
-    height: 250px;
+    width: 450px;
+    height: 350px;
     position: relative;
     transform-style: preserve-3d;
     transition: transform 0.6s;
