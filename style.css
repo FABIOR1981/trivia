@@ -9,82 +9,62 @@ body {
 }
 
 .contenedor-trivia {
-    perspective: 1000px;
+    perspective: 1500px; /* Aumentamos la perspectiva para el nuevo tamaño gigante */
 }
 
+/* --- TAMAÑO GRANDE DE LA TARJETA --- */
 .tarjeta {
-    width: 450px;
-    height: 350px;
+    width: 650px;         /* Ancho gigante */
+    height: 450px;        /* Alto gigante */
     position: relative;
     transform-style: preserve-3d;
     transition: transform 0.6s;
     cursor: pointer;
 }
 
-/* Estilos para las imágenes de la trivia */
-.img-trivia {
-    width: 100%;
-    max-height: 200px;  /* Antes: 120px (le damos más altura a la imagen) */
-    object-fit: cover; 
-    border-radius: 6px;
-    margin-bottom: 15px; 
-}
-
-/* Clase que añadirá JavaScript para girar la tarjeta */
+/* Clase que añade JavaScript para girar la tarjeta */
 .tarjeta.volteada {
     transform: rotateY(180deg);
 }
 
+/* --- PROPIEDADES DE LAS CARAS --- */
 .cara {
     position: absolute;
     width: 100%;
     height: 100%;
     backface-visibility: hidden;
     display: flex;
-    justify-content: center;
+    flex-direction: column;    /* Imagen arriba, texto abajo */
+    justify-content: space-between; /* Distribuye de forma limpia el espacio interno */
     align-items: center;
-    padding: 20px;
+    padding: 25px;             /* Más espacio interno */
     box-sizing: border-box;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-    font-size: 1.2rem;
+    border-radius: 15px;       /* Bordes más redondeados y modernos */
+    box-shadow: 0 10px 25px rgba(0,0,0,0.15); /* Sombra con más volumen */
+    font-size: 1.5rem;         /* Letra más grande para acompañar la escala */
     text-align: center;
 }
 
+/* Cara de adelante (Pregunta) */
 .frente {
     background-color: #ffffff;
     color: #333;
+    border: 3px solid #3498db; /* Borde azul estético para enmarcar el frente */
 }
 
+/* Cara de atrás (Respuesta) */
 .dorso {
-    background-color: #4caf50;
+    background-color: #2ecc71; /* Un verde un poco más vivo */
     color: white;
     transform: rotateY(180deg);
+    border: 3px solid #27ae60; /* Borde verde oscuro para enmarcar el dorso */
 }
 
-/* Modifica o añade esto a tu CSS existente */
-.cara {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    backface-visibility: hidden;
-    display: flex;
-    flex-direction: column; /* Alinea la imagen arriba y el texto abajo */
-    justify-content: center;
-    align-items: center;
-    padding: 15px;
-    box-sizing: border-box;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-    font-size: 1.2rem;
-    text-align: center;
-}
-
-/* Estilos para las imágenes de la trivia */
+/* --- AJUSTE DE LA IMAGEN GIGANTE --- */
 .img-trivia {
     width: 100%;
-    max-height: 120px; /* Controla la altura máxima para que no pise el texto */
-    object-fit: cover; /* Hace que la imagen se adapte sin deformarse */
-    border-radius: 6px;
-    margin-bottom: 10px; /* Separación con el texto */
+    height: 260px;       /* Altura fija generosa para que luzca la imagen */
+    object-fit: cover;   /* Adapta la imagen perfectamente sin deformarla */
+    border-radius: 10px; /* Bordes suaves para la imagen */
+    margin-bottom: 15px; 
 }
