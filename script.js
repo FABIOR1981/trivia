@@ -7,9 +7,9 @@ const trivia = [
     },
     { 
         pregunta: "¿Qué planeta es conocido como el Planeta Rojo?", 
-        imgPregunta: "img/marte-pregunta.jpg", 
+        imgPregunta: "img/marte-pregunta.svg", 
         respuesta: "Marte", 
-        imgRespuesta: "img/marte-respuesta.jpg" 
+        imgRespuesta: "img/marte-respuesta.svg" 
     },
     { 
         pregunta: "¿Cuántos minutos tiene una hora?", 
