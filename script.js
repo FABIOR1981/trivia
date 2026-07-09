@@ -1,4 +1,4 @@
-const trivia = [
+const trivia_test = [
     { 
         pregunta: "¿Cuál es la capital de Uruguay?", 
         imgPregunta: "img/uruguay-pregunta.svg", // Ejemplo de ruta local
@@ -33,97 +33,147 @@ const trivia = [
 ];
 
 
-const triviaProd = [
+const trivia = [
+   // --- HISTORIA (4 preguntas) ---
     { 
-        pregunta: "¿Cuál es la capital de Uruguay?", 
-        imgPregunta: "img/uruguay-pregunta.png", // Ejemplo de ruta local
-        respuesta: "Montevideo", 
-        imgRespuesta: "img/montevideo-respuesta.png" 
-    },
-    { 
-        pregunta: "¿Qué planeta es conocido como el Planeta Rojo?", 
-        imgPregunta: "img/marte-pregunta.jpg", 
-        respuesta: "Marte", 
-        imgRespuesta: "img/marte-respuesta.jpg" 
-    },
-    { 
-        pregunta: "¿Cuántos minutos tiene una hora?", 
-        imgPregunta: "", // Vacío: usará de forma automática la imagen por defecto
-        respuesta: "60 minutos", 
-        imgRespuesta: "" 
-    },
-    { 
-        pregunta: "¿Cuál es el río más largo del mundo?", 
+        pregunta: "¿Qué civilización antigua construyó el Coliseo y expandió su imperio por todo el Mediterráneo?", 
         imgPregunta: "", 
-        respuesta: "El río Amazonas", 
+        respuesta: "La civilización Romana", 
         imgRespuesta: "" 
     },
     { 
-        pregunta: "¿Qué año llegó el ser humano a la Luna?", 
+        pregunta: "¿Qué período histórico comenzó tras la caída del Imperio Romano de Occidente en el año 476?", 
         imgPregunta: "", 
-        respuesta: "En 1969 (Apolo 11)", 
+        respuesta: "La Edad Media", 
         imgRespuesta: "" 
     },
     { 
-        pregunta: "¿Cuál es el océano más grande de la Tierra?", 
+        pregunta: "¿Qué importante invento de Johannes Gutenberg en el siglo XV permitió duplicar libros de forma masiva?", 
         imgPregunta: "", 
-        respuesta: "El Océano Pacífico", 
+        respuesta: "La imprenta", 
         imgRespuesta: "" 
     },
     { 
-        pregunta: "¿Quién pintó la famosa 'Mona Lisa'?", 
+        pregunta: "¿Qué hito histórico de 1789 marcó el fin de de la monarquía absoluta en Francia bajo el lema 'Libertad, Igualdad y Fraternidad'?", 
         imgPregunta: "", 
-        respuesta: "Leonardo da Vinci", 
+        respuesta: "La Revolución Francesa", 
+        imgRespuesta: "" 
+    },
+
+    // --- GEOGRAFÍA (4 preguntas) ---
+    { 
+        pregunta: "¿Cuál es la línea imaginaria que divide a la Tierra en los hemisferios Norte y Sur?", 
+        imgPregunta: "", 
+        respuesta: "El Ecuador", 
         imgRespuesta: "" 
     },
     { 
-        pregunta: "¿Qué significan las siglas de la tecnología 'HTML'?", 
+        pregunta: "En términos de población, ¿cuál es el continente más poblado del mundo?", 
         imgPregunta: "", 
-        respuesta: "HyperText Markup Language", 
+        respuesta: "Asia", 
         imgRespuesta: "" 
     },
     { 
-        pregunta: "¿Cuál es el país más grande del mundo por extensión territorial?", 
+        pregunta: "¿Qué gran cordillera montañosa se extiende a lo largo de la costa occidental de América del Sur?", 
         imgPregunta: "", 
-        respuesta: "Rusia", 
+        respuesta: "La Cordillera de los Andes", 
         imgRespuesta: "" 
     },
     { 
-        pregunta: "¿Qué tipo de animal es la ballena azul?", 
+        pregunta: "¿Cómo se llama el proceso por el cual el suelo fértil pierde sus propiedades debido a la sequía o la deforestación?", 
         imgPregunta: "", 
-        respuesta: "Un mamífero marino", 
+        respuesta: "Desertificación", 
+        imgRespuesta: "" 
+    },
+
+    // --- BIOLOGÍA (4 preguntas) ---
+    { 
+        pregunta: "¿Cómo se llaman las células que no tienen un núcleo definido y cuyo material genético está disperso?", 
+        imgPregunta: "", 
+        respuesta: "Células procariotas", 
         imgRespuesta: "" 
     },
     { 
-        pregunta: "¿En qué galaxia se encuentra nuestro sistema solar?", 
+        pregunta: "¿Qué proceso realizan las plantas para transformar la luz solar en energía química?", 
         imgPregunta: "", 
-        respuesta: "En la Vía Láctea", 
+        respuesta: "La fotosíntesis", 
         imgRespuesta: "" 
     },
     { 
-        pregunta: "¿Cuál es el metal más caro del mundo?", 
+        pregunta: "¿Qué molécula con estructura de doble hélice contiene las instrucciones genéticas de los seres vivos?", 
         imgPregunta: "", 
-        respuesta: "El Rodio", 
+        respuesta: "El ADN", 
         imgRespuesta: "" 
     },
     { 
-        pregunta: "¿Cuál es el idioma más hablado nativamente en el mundo?", 
+        pregunta: "¿Cómo se denomina a los organismos que producen su propio alimento, como las plantas y las algas?", 
         imgPregunta: "", 
-        respuesta: "El Chino Mandarín", 
+        respuesta: "Organismos autótrofos", 
+        imgRespuesta: "" 
+    },
+
+    // --- GEOLOGÍA (4 preguntas) ---
+    { 
+        pregunta: "¿Cuál es la capa más interna y caliente de la Tierra, compuesta principalmente de hierro y níquel?", 
+        imgPregunta: "", 
+        respuesta: "El núcleo", 
         imgRespuesta: "" 
     },
     { 
-        pregunta: "¿Qué famosa serie de ciencia ficción cuenta las aventuras del equipo 'SG-1'?", 
+        pregunta: "¿Cómo se llama el supercontinente que existió hace millones de años antes de dividirse en los actuales?", 
         imgPregunta: "", 
-        respuesta: "Stargate SG-1", 
+        respuesta: "Pangea", 
         imgRespuesta: "" 
     },
     { 
-        pregunta: "¿Cuál es el hueso más largo del cuerpo humano?", 
+        pregunta: "¿Qué tipo de rocas se forman a partir del enfriamiento y solidificación del magma o la lava?", 
         imgPregunta: "", 
-        respuesta: "El Fémur", 
+        respuesta: "Rocas ígneas (o magmáticas)", 
         imgRespuesta: "" 
-    }
+    },
+    { 
+        pregunta: "¿Cómo se llaman los fragmentos de la litosfera que se mueven sobre el manto terrestre y causan terremotos?", 
+        imgPregunta: "", 
+        respuesta: "Placas tectónicas", 
+        imgRespuesta: "" 
+    },
+
+    // --- ESPACIO (4 preguntas) ---
+    { 
+        pregunta: "¿Cuál es el planeta más grande de nuestro sistema solar?", 
+        imgPregunta: "", 
+        respuesta: "Júpiter", 
+        imgRespuesta: "" 
+    },
+    { 
+        pregunta: " ¿Qué fuerza invisible mantiene a los planetas orbitando alrededor del Sol?", 
+        imgPregunta: "", 
+        respuesta: "La fuerza de gravedad", 
+        imgRespuesta: "" 
+    },
+    { 
+        pregunta: "¿A qué planeta del sistema solar se le conoce popularmente como el 'lucero del alba' debido a su brillo?", 
+        imgPregunta: "", 
+        respuesta: "Venus", 
+        imgRespuesta: "" 
+    },
+    { 
+        pregunta: "¿Cómo se llama la gigantesca agrupación de estrellas, gas y polvo a la que pertenece nuestro sistema solar?", 
+        imgPregunta: "", 
+        respuesta: "La Vía Láctea", 
+        imgRespuesta: "" 
+    },
+
+    // --- TECNOLOGÍA (4 preguntas) ---
+    { 
+        pregunta: "¿Qué componente de la computadora es considerado el 'cerebro' encargado de procesar todas las instrucciones?", 
+        imgPregunta: "", 
+        respuesta: "La CPU (Unidad Central de Procesamiento)", 
+        imgRespuesta: "" 
+    },
+    { 
+        pregunta: "¿Cómo se llama el sistema de redes interconectadas a nivel mundial que permite compartir información?", 
+        imgPregunta: "",
 ];
 
 // --- CONFIGURACIÓN DE IMÁGENES POR DEFECTO ---
