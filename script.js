@@ -3,7 +3,7 @@ const trivia = [
         pregunta: "¿Cuál es la capital de Uruguay?", 
         imgPregunta: "img/uruguay-pregunta.svg", // Ejemplo de ruta local
         respuesta: "Montevideo", 
-        imgRespuesta: "img/montevideo-respuesta.svg" 
+        imgRespuesta: "img/uruguay-respuesta.svg" 
     },
     { 
         pregunta: "¿Qué planeta es conocido como el Planeta Rojo?", 
