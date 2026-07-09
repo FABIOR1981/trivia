@@ -1,9 +1,44 @@
 const trivia = [
     { 
         pregunta: "¿Cuál es la capital de Uruguay?", 
-        imgPregunta: "img/uruguay-pregunta.jpg", // Ejemplo de ruta local
+        imgPregunta: "img/uruguay-pregunta.png", // Ejemplo de ruta local
         respuesta: "Montevideo", 
-        imgRespuesta: "img/montevideo-respuesta.jpg" 
+        imgRespuesta: "img/montevideo-respuesta.png" 
+    },
+    { 
+        pregunta: "¿Qué planeta es conocido como el Planeta Rojo?", 
+        imgPregunta: "img/marte-pregunta.jpg", 
+        respuesta: "Marte", 
+        imgRespuesta: "img/marte-respuesta.jpg" 
+    },
+    { 
+        pregunta: "¿Cuántos minutos tiene una hora?", 
+        imgPregunta: "", // Vacío: usará de forma automática la imagen por defecto
+        respuesta: "60 minutos", 
+        imgRespuesta: "" 
+    },
+    { 
+        pregunta: "¿Cuál es el río más largo del mundo?", 
+        imgPregunta: "", 
+        respuesta: "El río Amazonas", 
+        imgRespuesta: "" 
+    },
+    { 
+        pregunta: "¿Qué año llegó el ser humano a la Luna?", 
+        imgPregunta: "", 
+        respuesta: "En 1969 (Apolo 11)", 
+        imgRespuesta: "" 
+    }
+
+];
+
+
+const triviaProd = [
+    { 
+        pregunta: "¿Cuál es la capital de Uruguay?", 
+        imgPregunta: "img/uruguay-pregunta.png", // Ejemplo de ruta local
+        respuesta: "Montevideo", 
+        imgRespuesta: "img/montevideo-respuesta.png" 
     },
     { 
         pregunta: "¿Qué planeta es conocido como el Planeta Rojo?", 
