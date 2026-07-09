@@ -54,7 +54,7 @@ const trivia = [
         imgRespuesta: "" 
     },
     { 
-        pregunta: "¿Qué hito histórico de 1789 marcó el fin de de la monarquía absoluta en Francia bajo el lema 'Libertad, Igualdad y Fraternidad'?", 
+        pregunta: "¿Qué hito histórico de 1789 marcó el fin de la monarquía absoluta en Francia bajo el lema 'Libertad, Igualdad y Fraternidad'?", 
         imgPregunta: "", 
         respuesta: "La Revolución Francesa", 
         imgRespuesta: "" 
@@ -146,13 +146,13 @@ const trivia = [
         imgRespuesta: "" 
     },
     { 
-        pregunta: " ¿Qué fuerza invisible mantiene a los planetas orbitando alrededor del Sol?", 
+        pregunta: "¿Qué fuerza invisible mantiene a los planetas orbitando alrededor del Sol?", 
         imgPregunta: "", 
         respuesta: "La fuerza de gravedad", 
         imgRespuesta: "" 
     },
     { 
-        pregunta: "¿A qué planeta del sistema solar se le conoce popularmente como el 'lucero del alba' debido a su brillo?", 
+        pregunta: "¿A qué planeta del sistema solar se le conoce popularmente como el 'lucero del alba' debido a su gran brillo?", 
         imgPregunta: "", 
         respuesta: "Venus", 
         imgRespuesta: "" 
@@ -173,7 +173,22 @@ const trivia = [
     },
     { 
         pregunta: "¿Cómo se llama el sistema de redes interconectadas a nivel mundial que permite compartir información?", 
-        imgPregunta: "",
+        imgPregunta: "", 
+        respuesta: "Internet", 
+        imgRespuesta: "" 
+    },
+    { 
+        pregunta: "¿Qué componente de hardware se utiliza para almacenar los datos de manera temporal mientras los programas se ejecutan?", 
+        imgPregunta: "", 
+        respuesta: "Memoria RAM", 
+        imgRespuesta: "" 
+    },
+    { 
+        pregunta: "¿Qué tipo de periférico es una impresora: de entrada, de salida o de almacenamiento?", 
+        imgPregunta: "", 
+        respuesta: "Periférico de salida", 
+        imgRespuesta: "" 
+    }
 ];
 
 // --- CONFIGURACIÓN DE IMÁGENES POR DEFECTO ---
