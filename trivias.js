@@ -234,7 +234,7 @@ export const trivia = [
     },
     {
         pregunta: "¿Qué grupo de alimentos de origen vegetal recomienda la OMS consumir diariamente por su alto contenido de fibra, vitaminas y minerales?",
-        area: "Nutrición",
+        area: "Nutricion",
         imgPregunta: "",
         respuesta: "Frutas y verduras",
         imgRespuesta: ""
