@@ -227,7 +227,7 @@ export const trivia = [
     },
     {
         pregunta: "Para combatir la obesidad, la OPS promueve el uso de octógonos negros en los envases. ¿Cómo se le llama a este sistema de advertencia?",
-        area: "Nutrición",
+        area: "Nutricion",
         imgPregunta: "",
         respuesta: "Etiquetado frontal nutricional",
         imgRespuesta: ""
