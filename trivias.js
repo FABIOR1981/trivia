@@ -210,5 +210,33 @@ export const trivia = [
         imgPregunta: "",
         respuesta: "Periférico de salida",
         imgRespuesta: ""
+    },
+    {
+        pregunta: "Según la OMS, ¿qué tipo de grasas presentes en alimentos ultraprocesados y fritos se deben evitar por completo para proteger la salud del corazón?",
+        area: "Nutrición",
+        imgPregunta: "",
+        respuesta: "Las grasas trans",
+        imgRespuesta: ""
+    },
+    {
+        pregunta: "Según las recomendaciones de la OMS, ¿cuántos gramos de sal al día (equivalente a una cucharadita) como máximo debería consumir un adulto?",
+        area: "Nutrición",
+        imgPregunta: "",
+        respuesta: "5 gramos",
+        imgRespuesta: ""
+    },
+    {
+        pregunta: "Para combatir la obesidad, la OPS promueve el uso de octógonos negros en los envases. ¿Cómo se le llama a este sistema de advertencia?",
+        area: "Nutrición",
+        imgPregunta: "",
+        respuesta: "Etiquetado frontal nutricional",
+        imgRespuesta: ""
+    },
+    {
+        pregunta: "¿Qué grupo de alimentos de origen vegetal recomienda la OMS consumir diariamente por su alto contenido de fibra, vitaminas y minerales?",
+        area: "Nutrición",
+        imgPregunta: "",
+        respuesta: "Frutas y verduras",
+        imgRespuesta: ""
     }
 ];

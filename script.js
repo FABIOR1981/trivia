@@ -30,6 +30,10 @@ const IMAGENES_POR_AREA = {
     "Tecnología": {
         pregunta: "img/tecnologia-pregunta.png",
         respuesta: "img/tecnologia-respuesta.png"
+    },
+     "Nutricion": {
+        pregunta: "img/nutricion-pregunta.png",
+        respuesta: "img/nutricion-respuesta.png"
     }
 };
 
