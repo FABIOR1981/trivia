@@ -8,12 +8,12 @@ body {
     font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
     overflow: hidden;
     
-    /* Fondo con degradado dinámico (Queda activo si la imagen no se encuentra) */
-    background: linear-gradient(-45deg, #0f172a, #1e1b4b, #2e1065, #0f172a);
-    background-size: 400% 400%;
-    animation: gradienteFondoRandom 15s ease infinite;
+    /* Fondo con degradado RADIAL de respaldo */
+    background: radial-gradient(circle at center, #2e1065, #1e1b4b, #0f172a);
+    background-size: 200% 200%;
+    animation: gradienteFondoEsferico 16s ease infinite;
 
-    /* Intentar cargar la imagen de fondo desde la ruta especificada */
+    /* Imagen de fondo principal */
     background-image: url('img/fondo/fondo_1.png');
     background-repeat: no-repeat;
     background-position: center;
@@ -21,28 +21,28 @@ body {
     background-attachment: fixed;
 }
 
-/* Transición optimizada para forzar movimiento en X e Y de forma simultánea */
-@keyframes gradienteFondoRandom {
+/* Animación en órbita caótica */
+@keyframes gradienteFondoEsferico {
     0% {
-        background-position: 0% 50%;
+        background-position: 0% 0%;
     }
     25% {
-        background-position: 100% 30%;
+        background-position: 100% 100%;
     }
     50% {
-        background-position: 30% 100%;
+        background-position: 100% 0%;
     }
     75% {
-        background-position: 0% 80%;
+        background-position: 0% 100%;
     }
     100% {
-        background-position: 0% 50%;
+        background-position: 0% 0%;
     }
 }
 
 /* --- CONTENEDOR ENMARCADO (Efecto Cine / Redes Sociales) --- */
 .contenedor-trivia {
-    perspective: 2000px; /* Profundidad 3D mejorada para el giro */
+    perspective: 2000px;
     padding: 40px;
     background: rgba(255, 255, 255, 0.03);
     border-radius: 24px;
@@ -54,11 +54,11 @@ body {
 
 /* --- ESTRUCTURA E INTERFACES 3D DE LA TARJETA --- */
 .tarjeta {
-    width: 680px;         /* Ajuste leve de proporciones cinematográficas */
+    width: 680px;         
     height: 460px;        
     position: relative;
     transform-style: preserve-3d;
-    transition: transform 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275); /* Giro con rebote elástico premium */
+    transition: transform 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275);
     cursor: pointer;
 }
 
@@ -76,7 +76,7 @@ body {
     -webkit-backface-visibility: hidden;
     display: flex;
     flex-direction: column;    
-    justify-content: space-between; 
+    justify-content: space-between;
     align-items: center;
     padding: 35px;             
     box-sizing: border-box;
@@ -89,12 +89,12 @@ body {
 .frente {
     background: linear-gradient(135deg, #ffffff, #f8fafc);
     color: #1e293b;
-    border: 4px solid #3b82f6; /* Borde azul moderno */
+    border: 4px solid #3b82f6;
 }
 
 /* --- CARA DORSO (Respuesta) --- */
 .dorso {
-    background: linear-gradient(135deg, #10b981, #059669); /* Degradado verde vibrante */
+    background: linear-gradient(135deg, #10b981, #059669);
     color: #ffffff;
     transform: rotateY(180deg);
     border: 4px solid #34d399;
@@ -103,8 +103,8 @@ body {
 /* --- ESTILIZACIÓN DE LAS IMÁGENES --- */
 .img-trivia {
     width: 100%;
-    height: 240px;         /* Espacio fijo optimizado para la imagen */
-    object-fit: cover;     /* Hace que cualquier imagen de Unsplash llene el contenedor estéticamente */
+    height: 240px;         
+    object-fit: cover;     
     border-radius: 12px;
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
     border: 1px solid rgba(0, 0, 0, 0.05);
@@ -117,12 +117,12 @@ body {
     box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
 }
 
-/* --- TRATAMIENTO DE LOS TEXTOS (Legibilidad en video) --- */
+/* --- TRATAMIENTO DE LOS TEXTOS --- */
 #texto-pregunta, #texto-respuesta {
-    font-size: 1.7rem;     /* Un poco más grande para pantallas móviles/videos */
-    font-weight: 700;      /* Texto en negrita impactante */
+    font-size: 1.7rem;     
+    font-weight: 700;      
     line-height: 1.4;
-    margin-top: auto;      /* Empuja el texto perfectamente hacia abajo */
+    margin-top: auto;      
     margin-bottom: auto;
     padding: 10px 0 0 0;
 }
@@ -134,6 +134,5 @@ body {
 
 #texto-respuesta {
     letter-spacing: 0.01em;
-    /* Sombra de texto fuerte para garantizar lectura sobre el fondo verde */
-    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3); 
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
 }
