@@ -8,12 +8,12 @@ body {
     font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
     overflow: hidden;
     
-    /* Fondo con degradado animado (Queda activo si la imagen no se encuentra) */
+    /* Fondo con degradado animado multidireccional (Queda activo si la imagen no se encuentra) */
     background: linear-gradient(-45deg, #0f172a, #1e1b4b, #2e1065, #0f172a);
     background-size: 400% 400%;
-    animation: gradienteFondo 15s ease infinite;
+    animation: gradienteFondoRandom 15s ease infinite;
 
-    /* Intentar cargar la imagen de fondo desde la nueva ruta */
+    /* Intentar cargar la imagen de fondo desde la ruta especificada */
     background-image: url('img/fondo/fondo_1.png');
     background-repeat: no-repeat;
     background-position: center;
@@ -21,9 +21,13 @@ body {
     background-attachment: fixed;
 }
 
-@keyframes gradienteFondo {
+/* Animación que desplaza el foco del degradado por múltiples coordenadas simulando aleatoriedad */
+@keyframes gradienteFondoRandom {
     0% { background-position: 0% 50%; }
-    50% { background-position: 100% 50%; }
+    20% { background-position: 100% 0%; }
+    40% { background-position: 50% 100%; }
+    60% { background-position: 0% 100%; }
+    80% { background-position: 100% 50%; }
     100% { background-position: 0% 50%; }
 }
 
