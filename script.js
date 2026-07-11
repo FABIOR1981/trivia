@@ -8,32 +8,32 @@ const IMG_RESPUESTA_DEFECTO = "https://images.unsplash.com/photo-1542435503-956c
 // 2. CONFIGURACIÓN DE IMÁGENES FIJAS POR ÁREA TEMÁTICA
 const IMAGENES_POR_AREA = {
     "Historia": {
-        pregunta: "img/tarjetas/historia-pregunta.png",
-        respuesta: "img/tarjetas/historia-respuesta.png"
+        pregunta: "img/tarjetas/historia-pregunta.webp",
+        respuesta: "img/tarjetas/historia-respuesta.webp"
     },
     "Geografía": {
-        pregunta: "img/tarjetas/geografia-pregunta.png",
-        respuesta: "img/tarjetas/geografia-respuesta.png"
+        pregunta: "img/tarjetas/geografia-pregunta.webp",
+        respuesta: "img/tarjetas/geografia-respuesta.webp"
     },
     "Biología": {
-        pregunta: "img/tarjetas/biologia-pregunta.png",
-        respuesta: "img/tarjetas/biologia-respuesta.png"
+        pregunta: "img/tarjetas/biologia-pregunta.webp",
+        respuesta: "img/tarjetas/biologia-respuesta.webp"
     },
     "Geología": {
-        pregunta: "img/tarjetas/geologia-pregunta.png",
-        respuesta: "img/tarjetas/geologia-respuesta.png"
+        pregunta: "img/tarjetas/geologia-pregunta.webp",
+        respuesta: "img/tarjetas/geologia-respuesta.webp"
     },
     "Espacio": {
-        pregunta: "img/tarjetas/espacio-pregunta.png",
-        respuesta: "img/tarjetas/espacio-respuesta.png"
+        pregunta: "img/tarjetas/espacio-pregunta.webp",
+        respuesta: "img/tarjetas/espacio-respuesta.webp"
     },
     "Tecnología": {
-        pregunta: "img/tarjetas/tecnologia-pregunta.png",
-        respuesta: "img/tarjetas/tecnologia-respuesta.png"
+        pregunta: "img/tarjetas/tecnologia-pregunta.webp",
+        respuesta: "img/tarjetas/tecnologia-respuesta.webp"
     },
      "Nutricion": {
-        pregunta: "img/nutricion-pregunta.png",
-        respuesta: "img/nutricion-respuesta.png"
+        pregunta: "img/nutricion-pregunta.webp",
+        respuesta: "img/nutricion-respuesta.webp"
     }
 };
 
