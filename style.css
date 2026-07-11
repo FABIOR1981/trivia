@@ -6,12 +6,19 @@ body {
     height: 100vh;
     margin: 0;
     font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    overflow: hidden;
     
-    /* Fondo con degradado animado en movimiento constante */
+    /* Fondo con degradado animado (Queda activo si la imagen no se encuentra) */
     background: linear-gradient(-45deg, #0f172a, #1e1b4b, #2e1065, #0f172a);
     background-size: 400% 400%;
     animation: gradienteFondo 15s ease infinite;
-    overflow: hidden;
+
+    /* Intentar cargar la imagen de fondo desde la nueva ruta */
+    background-image: url('img/fondo/fondo_1.png');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    background-attachment: fixed;
 }
 
 @keyframes gradienteFondo {
