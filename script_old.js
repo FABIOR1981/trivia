@@ -7,7 +7,6 @@ const REINICIAR_AL_TERMINAR = false; // true = vuelve a empezar en bucle / false
 // --- CONFIGURACIÓN DE IMÁGENES POR DEFECTO ---
 const IMG_PREGUNTA_DEFECTO = "https://images.unsplash.com/photo-1607604276583-eef5d076aa5f?w=400"; 
 const IMG_RESPUESTA_DEFECTO = "https://images.unsplash.com/photo-1542435503-956c469947f6?w=400"; 
-const IMG_BIENVENIDA = "img/fondo/fondo_1.webp"; // Usamos tu fondo optimizado para la bienvenida
 
 // 2. CONFIGURACIÓN DE IMÁGENES FIJAS POR ÁREA TEMÁTICA
 const IMAGENES_POR_AREA = {
@@ -41,8 +40,7 @@ const IMAGENES_POR_AREA = {
     }
 };
 
-// Iniciamos en -1 para controlar el estado de "Bienvenida" antes de las preguntas
-let indiceActual = -1; 
+let indiceActual = 0;
 const tarjeta = document.getElementById('tarjeta');
 const textoPregunta = document.getElementById('texto-pregunta');
 const textoRespuesta = document.getElementById('texto-respuesta');
@@ -52,65 +50,33 @@ const imgRespuesta = document.getElementById('img-respuesta');
 // Tiempos en milisegundos (5s pregunta / 3s respuesta)
 const TIEMPO_MOSTRAR_PREGUNTA = 5000; 
 const TIEMPO_MOSTRAR_RESPUESTA = 3000; 
-const TIEMPO_CUENTA_ATRAS = 5; // Duración de la cuenta regresiva en segundos
 
 // Mezclar las preguntas al cargar el juego por primera vez
 trivia.sort(() => Math.random() - 0.5);
 
-// Precarga automática de imágenes en segundo plano para que no parpadeen
-function precargarImagenes() {
-    Object.values(IMAGENES_POR_AREA).forEach(tema => {
-        const imgP = new Image(); imgP.src = tema.pregunta;
-        const imgR = new Image(); imgR.src = tema.respuesta;
-    });
-}
-
 function iniciarTrivia() {
-    // --- ESTADO DE BIENVENIDA Y CUENTA ATRÁS ---
-    if (indiceActual === -1) {
-        precargarImagenes(); // Empieza a cachear las imágenes de los temas
-        textoPregunta.textContent = "¡PREPÁRATE PARA LA TRIVIA!";
-        imgPregunta.src = IMG_BIENVENIDA;
-        tarjeta.classList.remove('volteada');
-
-        let segundosRestantes = TIEMPO_CUENTA_ATRAS;
-        textoRespuesta.textContent = `Comenzamos en... ${segundosRestantes}`;
-
-        // Iniciamos la cuenta regresiva numérica
-        const intervaloBienvenida = setInterval(() => {
-            segundosRestantes--;
-            if (segundosRestantes > 0) {
-                textoRespuesta.textContent = `Comenzamos en... ${segundosRestantes}`;
-            } else {
-                clearInterval(intervaloBienvenida);
-                indiceActual = 0; // Pasamos a la primera pregunta real
-                iniciarTrivia();
-            }
-        }, 1000);
-
-        return; // Detiene la ejecución aquí para que no avance al ciclo de preguntas aún
-    }
-
-    // --- VERIFICACIÓN DE FIN DE JUEGO ---
+    // Verificar si llegamos al final de las preguntas
     if (indiceActual >= trivia.length) {
         if (REINICIAR_AL_TERMINAR) {
+            // Si está en true, resetea, mezcla de nuevo y continúa
             indiceActual = 0; 
             trivia.sort(() => Math.random() - 0.5); 
             console.log("El bucle está activo. Reiniciando trivia...");
         } else {
+            // Si está en false, detenemos la ejecución aquí
             console.log("Fin de las preguntas. El juego se ha detenido.");
-            mostrarPantallaFin();
-            return;
+            mostrarPantallaFin(); // Opcional: una función para avisar al usuario
+            return; // El 'return' corta la función y evita que siga cargando tarjetas
         }
     }
 
-    // --- CICLO NORMAL DE PREGUNTAS ---
     const tarjetaActual = trivia[indiceActual];
-    const areaTema = tarjetaActual.area;
+    const areaTema = tarjetaActual.area; // Obtiene el área (ej: "Historia")
 
     // 3. CARGAR DATOS DEL FRENTE (Pregunta)
     textoPregunta.textContent = tarjetaActual.pregunta;
     
+    // Lógica de descarte: Imagen propia -> Imagen del Área -> Imagen por Defecto
     if (tarjetaActual.imgPregunta) {
         imgPregunta.src = tarjetaActual.imgPregunta;
     } else if (areaTema && IMAGENES_POR_AREA[areaTema]) {
@@ -146,9 +112,11 @@ function iniciarTrivia() {
     }, TIEMPO_MOSTRAR_PREGUNTA);
 }
 
+// Función opcional por si quieres limpiar la pantalla o mostrar un mensaje al terminar
 function mostrarPantallaFin() {
+    // Ejemplo: puedes ocultar la tarjeta o poner un texto amigable
     textoPregunta.textContent = "¡Has completado todas las preguntas!";
-    imgPregunta.src = IMG_BIENVENIDA; 
+    imgPregunta.src = IMG_PREGUNTA_DEFECTO; 
     tarjeta.classList.remove('volteada');
 }
 
