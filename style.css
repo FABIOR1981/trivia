@@ -8,7 +8,7 @@ body {
     font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
     overflow: hidden;
     
-    /* Fondo con degradado animado multidireccional (Queda activo si la imagen no se encuentra) */
+    /* Fondo con degradado dinámico (Queda activo si la imagen no se encuentra) */
     background: linear-gradient(-45deg, #0f172a, #1e1b4b, #2e1065, #0f172a);
     background-size: 400% 400%;
     animation: gradienteFondoRandom 15s ease infinite;
@@ -21,14 +21,23 @@ body {
     background-attachment: fixed;
 }
 
-/* Animación que desplaza el foco del degradado por múltiples coordenadas simulando aleatoriedad */
+/* Transición optimizada para forzar movimiento en X e Y de forma simultánea */
 @keyframes gradienteFondoRandom {
-    0% { background-position: 0% 50%; }
-    20% { background-position: 100% 0%; }
-    40% { background-position: 50% 100%; }
-    60% { background-position: 0% 100%; }
-    80% { background-position: 100% 50%; }
-    100% { background-position: 0% 50%; }
+    0% {
+        background-position: 0% 50%;
+    }
+    25% {
+        background-position: 100% 30%;
+    }
+    50% {
+        background-position: 30% 100%;
+    }
+    75% {
+        background-position: 0% 80%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
 }
 
 /* --- CONTENEDOR ENMARCADO (Efecto Cine / Redes Sociales) --- */
