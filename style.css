@@ -8,7 +8,7 @@ body {
     font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
     overflow: hidden;
     
-    /* Fondo oscuro fijo de respaldo */
+    /* Fondo oscuro de respaldo */
     background-color: #0f172a; 
     
     /* Configuración de la imagen de fondo */
@@ -16,33 +16,33 @@ body {
     background-repeat: no-repeat;
     background-attachment: fixed;
     
-    /* Escalamos la imagen para permitir un desplazamiento fluido sin bordes blancos */
+    /* Escalamos la imagen para permitir los desplazamientos en todos los extremos */
     background-size: 150% 150%;
     
-    /* Animación aplicada directamente a la imagen de fondo */
-    animation: moverImagenCaotico 20s ease-in-out infinite;
+    /* Nueva animación extendida y ralentizada a 40s para que sea suave */
+    animation: secuenciaFondoExtendida 40s ease-in-out infinite;
 }
 
-/* --- ANIMACIÓN EN EJES X E Y (FLOTACIÓN CAÓTICA REAL) --- */
-@keyframes moverImagenCaotico {
-    0% {
-        background-position: 0% 0%;
-    }
-    25% {
-        background-position: 100% 30%;
-    }
-    50% {
-        background-position: 30% 100%;
-    }
-    75% {
-        background-position: 100% 70%;
-    }
-    85% {
-        background-position: 10% 20%;
-    }
-    100% {
-        background-position: 0% 0%;
-    }
+/* --- SECUENCIA MAXIMA EXTENDIDA --- */
+@keyframes secuenciaFondoExtendida {
+    /* --- EJE HORIZONTAL --- */
+    0% { background-position: 50% 50%; }     /* Centro */
+    8% { background-position: 100% 50%; }    /* Todo a la derecha */
+    16% { background-position: 50% 50%; }    /* Regresa al centro */
+    24% { background-position: 0% 50%; }     /* Todo a la izquierda */
+    32% { background-position: 50% 50%; }    /* Regresa al centro */
+
+    /* --- EJE VERTICAL --- */
+    40% { background-position: 50% 100%; }   /* Todo hacia abajo */
+    48% { background-position: 50% 50%; }    /* Regresa al centro */
+    56% { background-position: 50% 0%; }     /* Todo hacia arriba */
+    64% { background-position: 50% 50%; }    /* Regresa al centro */
+
+    /* --- DIAGONALES CRUZADAS --- */
+    72% { background-position: 100% 100%; }  /* Esquina inferior derecha */
+    80% { background-position: 50% 50%; }    /* Regresa al centro */
+    90% { background-position: 0% 0%; }      /* Esquina superior izquierda */
+    100% { background-position: 50% 50%; }   /* Cierre perfecto en el centro */
 }
 
 /* --- CONTENEDOR ENMARCADO (Efecto Cine / Redes Sociales) --- */
