@@ -1,6 +1,9 @@
 // 1. IMPORTAR LAS PREGUNTAS DESDE EL OTRO ARCHIVO
 import { trivia } from './trivias.js';
 
+// Configuración del juego
+const REINICIAR_AL_TERMINAR = false; // true = vuelve a empezar en bucle / false = se detiene
+
 // --- CONFIGURACIÓN DE IMÁGENES POR DEFECTO ---
 const IMG_PREGUNTA_DEFECTO = "https://images.unsplash.com/photo-1607604276583-eef5d076aa5f?w=400"; 
 const IMG_RESPUESTA_DEFECTO = "https://images.unsplash.com/photo-1542435503-956c469947f6?w=400"; 
@@ -52,10 +55,19 @@ const TIEMPO_MOSTRAR_RESPUESTA = 3000;
 trivia.sort(() => Math.random() - 0.5);
 
 function iniciarTrivia() {
-    // Volver a empezar y reorganizar cuando se terminen todas las tarjetas (ahora son 24)
+    // Verificar si llegamos al final de las preguntas
     if (indiceActual >= trivia.length) {
-        indiceActual = 0; 
-        trivia.sort(() => Math.random() - 0.5); 
+        if (REINICIAR_AL_TERMINAR) {
+            // Si está en true, resetea, mezcla de nuevo y continúa
+            indiceActual = 0; 
+            trivia.sort(() => Math.random() - 0.5); 
+            console.log("El bucle está activo. Reiniciando trivia...");
+        } else {
+            // Si está en false, detenemos la ejecución aquí
+            console.log("Fin de las preguntas. El juego se ha detenido.");
+            mostrarPantallaFin(); // Opcional: una función para avisar al usuario
+            return; // El 'return' corta la función y evita que siga cargando tarjetas
+        }
     }
 
     const tarjetaActual = trivia[indiceActual];
@@ -98,6 +110,14 @@ function iniciarTrivia() {
         }, TIEMPO_MOSTRAR_RESPUESTA);
 
     }, TIEMPO_MOSTRAR_PREGUNTA);
+}
+
+// Función opcional por si quieres limpiar la pantalla o mostrar un mensaje al terminar
+function mostrarPantallaFin() {
+    // Ejemplo: puedes ocultar la tarjeta o poner un texto amigable
+    textoPregunta.textContent = "¡Has completado todas las preguntas!";
+    imgPregunta.src = IMG_PREGUNTA_DEFECTO; 
+    tarjeta.classList.remove('volteada');
 }
 
 // Arrancar el ciclo al cargar la página
