@@ -33,8 +33,8 @@ export const IMAGENES_POR_AREA = {
         respuesta: "img/tarjetas/tecnologia-respuesta.webp"
     },
     "Nutricion": {
-        pregunta: "img/nutricion-pregunta.webp",
-        respuesta: "img/nutricion-respuesta.webp"
+        pregunta: "img/tarjetas/nutricion-pregunta.webp",
+        respuesta: "img/tarjetas/nutricion-respuesta.webp"
     }
 };
 
