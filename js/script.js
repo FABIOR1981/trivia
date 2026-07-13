@@ -85,7 +85,8 @@ function iniciarTrivia() {
     }
 
     // 4. CARGAR DATOS DEL DORSO (Respuesta)
-    textoRespuesta.textContent = tarjetaActual.respuesta;
+    //textoRespuesta.textContent = tarjetaActual.respuesta;
+    textoRespuesta.textContent = `Respuesta: ${tarjetaActual.respuesta}`;
     
     if (tarjetaActual.imgRespuesta) {
         imgRespuesta.src = tarjetaActual.imgRespuesta;
