@@ -1,45 +1,15 @@
-// 1. IMPORTAR LAS PREGUNTAS DESDE EL OTRO ARCHIVO
+// 1. IMPORTAR LAS PREGUNTAS Y LA CONFIGURACIÓN DESDE OTRO ARCHIVO
 import { trivia } from './trivias.js';
-
-// Configuración del juego
-const REINICIAR_AL_TERMINAR = false; // true = vuelve a empezar en bucle / false = se detiene
-
-// --- CONFIGURACIÓN DE IMÁGENES POR DEFECTO ---
-const IMG_PREGUNTA_DEFECTO = "https://images.unsplash.com/photo-1607604276583-eef5d076aa5f?w=400"; 
-const IMG_RESPUESTA_DEFECTO = "https://images.unsplash.com/photo-1542435503-956c469947f6?w=400"; 
-const IMG_BIENVENIDA = "img/fondo/fondo_1.webp"; // Usamos tu fondo optimizado para la bienvenida
-
-// 2. CONFIGURACIÓN DE IMÁGENES FIJAS POR ÁREA TEMÁTICA
-const IMAGENES_POR_AREA = {
-    "Historia": {
-        pregunta: "img/tarjetas/historia-pregunta.webp",
-        respuesta: "img/tarjetas/historia-respuesta.webp"
-    },
-    "Geografía": {
-        pregunta: "img/tarjetas/geografia-pregunta.webp",
-        respuesta: "img/tarjetas/geografia-respuesta.webp"
-    },
-    "Biología": {
-        pregunta: "img/tarjetas/biologia-pregunta.webp",
-        respuesta: "img/tarjetas/biologia-respuesta.webp"
-    },
-    "Geología": {
-        pregunta: "img/tarjetas/geologia-pregunta.webp",
-        respuesta: "img/tarjetas/geologia-respuesta.webp"
-    },
-    "Espacio": {
-        pregunta: "img/tarjetas/espacio-pregunta.webp",
-        respuesta: "img/tarjetas/espacio-respuesta.webp"
-    },
-    "Tecnología": {
-        pregunta: "img/tarjetas/tecnologia-pregunta.webp",
-        respuesta: "img/tarjetas/tecnologia-respuesta.webp"
-    },
-     "Nutricion": {
-        pregunta: "img/nutricion-pregunta.webp",
-        respuesta: "img/nutricion-respuesta.webp"
-    }
-};
+import {
+    REINICIAR_AL_TERMINAR,
+    IMG_PREGUNTA_DEFECTO,
+    IMG_RESPUESTA_DEFECTO,
+    IMG_BIENVENIDA,
+    IMAGENES_POR_AREA,
+    TIEMPO_MOSTRAR_PREGUNTA,
+    TIEMPO_MOSTRAR_RESPUESTA,
+    TIEMPO_CUENTA_ATRAS
+} from './config.js';
 
 // Iniciamos en -1 para controlar el estado de "Bienvenida" antes de las preguntas
 let indiceActual = -1; 
@@ -48,11 +18,6 @@ const textoPregunta = document.getElementById('texto-pregunta');
 const textoRespuesta = document.getElementById('texto-respuesta');
 const imgPregunta = document.getElementById('img-pregunta');
 const imgRespuesta = document.getElementById('img-respuesta');
-
-// Tiempos en milisegundos (5s pregunta / 3s respuesta)
-const TIEMPO_MOSTRAR_PREGUNTA = 5000; 
-const TIEMPO_MOSTRAR_RESPUESTA = 3000; 
-const TIEMPO_CUENTA_ATRAS = 5; // Duración de la cuenta regresiva en segundos
 
 // Mezclar las preguntas al cargar el juego por primera vez
 trivia.sort(() => Math.random() - 0.5);

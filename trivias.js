@@ -1,36 +1,3 @@
-export const trivia_test = [
-    {
-        pregunta: "¿Cuál es la capital de Uruguay?",
-        imgPregunta: "img/uruguay-pregunta.svg",
-        respuesta: "Montevideo",
-        imgRespuesta: "img/uruguay-respuesta.svg"
-    },
-    {
-        pregunta: "¿Qué planeta es conocido como el Planeta Rojo?",
-        imgPregunta: "img/marte-pregunta.svg",
-        respuesta: "Marte",
-        imgRespuesta: "img/marte-respuesta.svg"
-    },
-    {
-        pregunta: "¿Cuántos minutos tiene una hora?",
-        imgPregunta: "img/hora-pregunta.svg",
-        respuesta: "60 minutos",
-        imgRespuesta: "img/hora-respuesta.svg"
-    },
-    {
-        pregunta: "¿Cuál es el río más largo del mundo?",
-        imgPregunta: "img/rio-pregunta.svg",
-        respuesta: "El río Amazonas",
-        imgRespuesta: "img/rio-respuesta.svg"
-    },
-    {
-        pregunta: "¿Qué año llegó el ser humano a la Luna?",
-        imgPregunta: "img/luna-pregunta.svg",
-        respuesta: "En 1969 (Apolo 11)",
-        imgRespuesta: "img/luna-respuesta.svg"
-    }
-];
-
 export const trivia = [
     // --- HISTORIA ---
     {
@@ -213,14 +180,14 @@ export const trivia = [
     },
     {
         pregunta: "Según la OMS, ¿qué tipo de grasas presentes en alimentos ultraprocesados y fritos se deben evitar por completo para proteger la salud del corazón?",
-        area: "Nutrición",
+        area: "Nutricion",
         imgPregunta: "",
         respuesta: "Las grasas trans",
         imgRespuesta: ""
     },
     {
         pregunta: "Según las recomendaciones de la OMS, ¿cuántos gramos de sal al día (equivalente a una cucharadita) como máximo debería consumir un adulto?",
-        area: "Nutrición",
+        area: "Nutricion",
         imgPregunta: "",
         respuesta: "5 gramos",
         imgRespuesta: ""
