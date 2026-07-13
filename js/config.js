@@ -39,6 +39,6 @@ export const IMAGENES_POR_AREA = {
 };
 
 // Tiempos en milisegundos (5s pregunta / 3s respuesta)
-export const TIEMPO_MOSTRAR_PREGUNTA = 5000;
+export const TIEMPO_MOSTRAR_PREGUNTA = 10000;
 export const TIEMPO_MOSTRAR_RESPUESTA = 3000;
 export const TIEMPO_CUENTA_ATRAS = 5; // Duración de la cuenta regresiva en segundos
