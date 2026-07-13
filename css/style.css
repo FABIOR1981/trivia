@@ -141,3 +141,18 @@ body {
     letter-spacing: 0.01em;
     text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
 }
+
+
+
+
+/* --- ESTILO DEL PIE DE PÁGINA --- */
+.pie-pagina {
+    position: absolute;
+    bottom: 20px;
+    width: 100%;
+    text-align: center;
+    color: rgba(255, 255, 255, 0.6); /* Color blanco suave para que no distraiga de la trivia */
+    font-size: 0.9rem;
+    letter-spacing: 0.05em;
+    font-family: inherit;
+}
