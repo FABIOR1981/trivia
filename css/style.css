@@ -12,7 +12,7 @@ body {
     background-color: #0f172a; 
     
     /* Configuración de la imagen de fondo */
-    background-image: url('img/fondo/fondo_1.webp');
+    background-image: url('../img/fondo/fondo_1.webp');
     background-repeat: no-repeat;
     background-attachment: fixed;
     
