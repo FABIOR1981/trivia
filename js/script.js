@@ -34,7 +34,7 @@ function iniciarTrivia() {
     // --- ESTADO DE BIENVENIDA Y CUENTA ATRÁS ---
     if (indiceActual === -1) {
         precargarImagenes(); // Empieza a cachear las imágenes de los temas
-        textoPregunta.textContent = "¿Te animas a adivinar?";
+        textoPregunta.textContent = "¡Acepta el desafío!";
         imgPregunta.src = IMG_BIENVENIDA;
         tarjeta.classList.remove('volteada');
 
