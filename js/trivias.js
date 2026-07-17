@@ -1,3 +1,3 @@
-import { trivia as setTriv } from './trivias/trivia_parte_2.js'; 
+import { trivia as setTriv } from './trivias/trivia_parte_3.js'; 
 
 export const trivia = setTriv;
