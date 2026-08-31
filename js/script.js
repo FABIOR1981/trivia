@@ -1,5 +1,6 @@
-// 1. IMPORTAR LAS PREGUNTAS Y LA CONFIGURACIÓN DESDE OTRO ARCHIVO
-import { trivia } from './trivias.js';
+// Este módulo ya no importa las preguntas directamente: las recibe vía
+// iniciarApp(trivia) desde js/inicio.js, que es quien pregunta al usuario
+// (por el modal) qué archivo de js/trivias/ usar.
 import {
     REINICIAR_AL_TERMINAR,
     IMG_PREGUNTA_DEFECTO,
@@ -11,16 +12,13 @@ import {
     TIEMPO_CUENTA_ATRAS
 } from './config.js';
 
-// Iniciamos en -1 para controlar el estado de "Bienvenida" antes de las preguntas
-let indiceActual = -1; 
+let trivia = [];
+let indiceActual = -1;
 const tarjeta = document.getElementById('tarjeta');
 const textoPregunta = document.getElementById('texto-pregunta');
 const textoRespuesta = document.getElementById('texto-respuesta');
 const imgPregunta = document.getElementById('img-pregunta');
 const imgRespuesta = document.getElementById('img-respuesta');
-
-// Mezclar las preguntas al cargar el juego por primera vez
-trivia.sort(() => Math.random() - 0.5);
 
 // Precarga automática de imágenes en segundo plano para que no parpadeen
 function precargarImagenes() {
@@ -59,8 +57,8 @@ function iniciarTrivia() {
     // --- VERIFICACIÓN DE FIN DE JUEGO ---
     if (indiceActual >= trivia.length) {
         if (REINICIAR_AL_TERMINAR) {
-            indiceActual = 0; 
-            trivia.sort(() => Math.random() - 0.5); 
+            indiceActual = 0;
+            trivia.sort(() => Math.random() - 0.5);
             console.log("El bucle está activo. Reiniciando trivia...");
         } else {
             console.log("Fin de las preguntas. El juego se ha detenido.");
@@ -75,7 +73,7 @@ function iniciarTrivia() {
 
     // 3. CARGAR DATOS DEL FRENTE (Pregunta)
     textoPregunta.textContent = tarjetaActual.pregunta;
-    
+
     if (tarjetaActual.imgPregunta) {
         imgPregunta.src = tarjetaActual.imgPregunta;
     } else if (areaTema && IMAGENES_POR_AREA[areaTema]) {
@@ -85,9 +83,8 @@ function iniciarTrivia() {
     }
 
     // 4. CARGAR DATOS DEL DORSO (Respuesta)
-    //textoRespuesta.textContent = tarjetaActual.respuesta;
     textoRespuesta.textContent = `Respuesta: ${tarjetaActual.respuesta}`;
-    
+
     if (tarjetaActual.imgRespuesta) {
         imgRespuesta.src = tarjetaActual.imgRespuesta;
     } else if (areaTema && IMAGENES_POR_AREA[areaTema]) {
@@ -106,7 +103,7 @@ function iniciarTrivia() {
         // Esperar el tiempo de la respuesta y pasar a la siguiente tarjeta
         setTimeout(() => {
             indiceActual++;
-            iniciarTrivia(); 
+            iniciarTrivia();
         }, TIEMPO_MOSTRAR_RESPUESTA);
 
     }, TIEMPO_MOSTRAR_PREGUNTA);
@@ -114,9 +111,29 @@ function iniciarTrivia() {
 
 function mostrarPantallaFin() {
     textoPregunta.textContent = "¡Has completado todas las preguntas!";
-    imgPregunta.src = IMG_BIENVENIDA; 
+    imgPregunta.src = IMG_BIENVENIDA;
     tarjeta.classList.remove('volteada');
+    // Aviso para quien esté grabando (ver grabar.js): la trivia terminó.
+    document.dispatchEvent(new Event('trivia-finalizada'));
 }
 
-// Arrancar el ciclo al cargar la página
-document.addEventListener('DOMContentLoaded', iniciarTrivia);
+/**
+ * Arranca la app con el set de preguntas elegido por el usuario en el modal.
+ * @param {Array} triviaSeleccionada - array de preguntas (trivia_parte_N.js)
+ */
+export function iniciarApp(triviaSeleccionada) {
+    trivia = triviaSeleccionada.slice(); // copia para no mutar el original al mezclar
+    trivia.sort(() => Math.random() - 0.5);
+    indiceActual = -1;
+    iniciarTrivia();
+}
+
+// Se mantiene por compatibilidad, por si algo externo necesita reiniciar
+// el ciclo sin recargar la página (por ejemplo, si en el futuro se agrega
+// una opción de "repetir").
+window.__trivia = {
+    reiniciar() {
+        indiceActual = -1;
+        iniciarTrivia();
+    }
+};
