@@ -2,6 +2,10 @@
 
 Trivia de preguntas y respuestas en formato de tarjetas, que avanza sola. Cada pregunta se muestra unos segundos y después aparece la respuesta. Está pensada para pasar en una pantalla o para grabarla como video.
 
+## Documentación
+
+El manual de usuario está en [documentacion-central](https://github.com/FABIOR1981/documentacion-central/tree/main/trivia/documentacion) ([PDF](https://github.com/FABIOR1981/documentacion-central/blob/main/trivia/documentacion/MANUAL_USUARIO.pdf)). También se puede consultar desde la bitácora de proyectos.
+
 ## Funcionalidades
 
 - **Áreas temáticas**: Historia, Geografía, Biología, Geología, Espacio, Tecnología y Nutrición. Cada área tiene su propia imagen de pregunta y de respuesta.
